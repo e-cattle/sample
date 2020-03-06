@@ -1,12 +1,51 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <router-view></router-view>
 </template>
+
+<script>
+
+export default {
+  components: {
+  },
+  data () {
+    return {
+    }
+  },
+  localStorage: {
+    user: {
+      type: Object,
+      default: {
+        authenticated: false,
+        id: 0,
+        name: '',
+        email: '',
+        picture: '',
+        language: '',
+        timezone: ''
+      }
+    },
+    synchronized: {
+      type: Number,
+      default: 0
+    },
+    token: {
+      type: Object,
+      default: {
+        id: 0,
+        pk: ''
+      }
+    },
+    alwaysSync: {
+      type: Boolean,
+      default: true
+    },
+    iosTryInstall: {
+      type: Boolean,
+      default: true
+    }
+  }
+}
+</script>
 
 <style>
 #app {
